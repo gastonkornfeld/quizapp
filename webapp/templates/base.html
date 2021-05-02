@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if title %}
+        <title> {{title}}</title>
+    {% else %}
+        <title> Quiz app</title>
+    {% endif %}
+
+    {% block custom_style %}{% endblock %}
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/statico.css') }}" />
+
+
+</head>
+
+
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Quizapp</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="{{url_for('index')}}">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="{{url_for('all')}}">All the questions <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="{{url_for('add')}}">Add a question  <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="{{url_for('score')}}">Leaderboard <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="{{url_for('login')}}">Login  <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="{{url_for('logout')}}">Log Out <span class="sr-only">(current)</span></a>
+            </div>
+        </div>
+    </nav>
+<div class="container">
+    <!-- Page-specific block -->
+    {% with messages = get_flashed_messages(with_categories = true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    {% block content %}
+    {% endblock %}
+    
+    <footer>Kornfeld gaston 2021, Hackaton 2, using flask and python to create an app. </footer>
+</div> <!-- End of container -->
+
+</body>
+</html>

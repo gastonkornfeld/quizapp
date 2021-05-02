@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="container-fluid p-3 my-3 bg-dark text-white">
+    <div class="content-section">
+        <form action="" method="POST">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Add a Question to the database  </legend>
+            
+
+
+                <div class="form-group">
+                    {{ form.details.label(class='form-control-label') }}
+                    {% if form.details.errors %}
+                        {{ form.details(class='form-control form-control-lg is-invalid') }}
+                        <div class="invalid-feedback">
+                            {% for error in form.details.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.details(class='form-control form-control-lg') }}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.answer.label(class='form-control-label') }}
+                    {% if form.answer.errors %}
+                        {{ form.answer(class='form-control form-control-lg is-invalid') }}
+                        <div class="invalid-feedback">
+                            {% for error in form.answer.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.answer(class='form-control form-control-lg') }}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.correct.label(class='form-control-label') }}
+                    {% if form.correct.errors %}
+                        {{ form.correct(class='form-control form-control-lg is-invalid') }}
+                        <div class="invalid-feedback">
+                            {% for error in form.correct.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.correct(class='form-control form-control-lg') }}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.wrong.label(class='form-control-label') }}
+                    {% if form.wrong.errors %}
+                        {{ form.wrong(class='form-control form-control-lg is-invalid') }}
+                        <div class="invalid-feedback">
+                            {% for error in form.wrong.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.wrong(class='form-control form-control-lg') }}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.category.label(class='form-control-label') }}
+                    {% if form.category.errors %}
+                        {{ form.category(class='form-control form-control-lg is-invalid') }}
+                        <div class="invalid-feedback">
+                            {% for error in form.category.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.category(class='form-control form-control-lg') }}
+                    {% endif %}
+                </div>
+
+
+            
+                
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class='btn btn-outline-info') }}
+            </div>
+
+            
+        
+        </form>
+    </div>
+</section>  
+
+{% endblock %}

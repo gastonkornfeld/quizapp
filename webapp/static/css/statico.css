@@ -1,0 +1,47 @@
+
+h1 {
+    text-transform: uppercase;
+}
+
+h2 {
+    color: orange;
+    text-transform: uppercase;
+}
+
+
+h3 {
+    text-transform: uppercase;
+}
+
+
+h5 {
+    text-transform: uppercase;
+}
+
+
+h6 {
+    text-transform: uppercase;
+}
+
+
+p {
+    text-transform: uppercase;
+}
+
+
+a {
+    display: block;
+}
+
+li {
+    text-transform: uppercase;
+    border-bottom: 2px solid orange;
+    text-align: center;
+    padding-top: 6px;
+    list-style-type: disclosure-closed;
+}
+
+small {
+    text-align: center;
+    text-transform: uppercase;
+}

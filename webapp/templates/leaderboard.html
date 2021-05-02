@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<h1>Leaderboard Table</h1>
+
+<h2>Chek you score in the table</h2>
+
+<section class="container-fluid p-3 my-3 bg-dark text-white">
+    
+  <h1>All the users </h1>
+  <table style="width:100%" class="table table-success">
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Country</th>
+      <th></th>
+      
+      <th>Score</th>
+    </tr>
+        
+        
+     
+    {% for user in users %}
+        {% if user.name == logged.name %}
+            <tr style="background-color: greenyellow;">
+                <td>{{ user.id }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.country }}</td>
+                <td></td>
+                <td> {{ user.score }}</td>
+            </tr>
+        {% else%}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.country }}</td>
+                <td></td>
+                
+                <td> {{ user.score }}</td>
+            </tr>
+        {% endif %}
+    {% endfor %}    
+  </table>
+
+</section>
+
+{% endblock %}

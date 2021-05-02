@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+  <h1>All the questions </h1>
+  <table style="width:100%" class="table table-success">
+    <tr>
+      <th>ID</th>
+      <th>Question</th>
+      <th>Answer</th>
+      <th>correct</th>
+      <th>incorrect</th>
+      <th>category</th>
+    </tr>
+        
+        
+     
+    {% for item in questions %}
+    <tr>
+      <td>{{ item.id }}</td>
+      <td>{{ item.details }}</td>
+      <td>{{ item.answer }}</td>
+      <td>{{ item.correct }}</td>
+      <td>{{ item.incorrect }}</td>
+      <td> {{ item.category }}</td>
+    </tr>
+
+    {% endfor %}    
+  </table>
+
+  
+
+
+{% endblock %}

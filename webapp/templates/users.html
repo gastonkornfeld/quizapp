@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="container-fluid p-3 my-3 bg-dark text-white">
+    <h1>List of users</h1>
+    <ol>
+    {% for user in all_users %}
+
+        
+        <li>    
+            <p>Name:  {{ user.name}} </p>
+            <p>City :  {{ user.country}} </p>
+            <p>Score : {{ user.score }}</p>
+           
+        </li>
+
+    {% endfor %}
+    </ol>
+</section>
+
+
+{% endblock %}

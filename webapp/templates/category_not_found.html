@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="container-fluid p-3 my-3 bg-dark text-white">
+    <h1>The category {{ category }} was not found in the database</h1>
+    <p>You can create your own questions about {{ category}}</p>
+    <a href="/add_question">Create a Question</a>
+    <a href="/all">See all questions</a>
+    <a href="/index">Go to The home Page</a>
+
+</section>
+
+
+{% endblock %}

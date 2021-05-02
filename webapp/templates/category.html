@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<h1>Question</h1> <span >Your score is: {{ session['user__score']}}</span>
+
+    <section class="container-fluid p-3 my-3 bg-info text-white">
+        <h3> Category  {{ random.category }} </h3>
+        <h2>Question Number {{ random.id }}</h2>
+        <h5><strong>  Question: </strong> {{ random.details }}</h5>
+        
+        <p>Correct answer gives: {{ random.correct }}</p>
+        <p>Wrong answer gives: {{ random.incorrect }}</p>
+        
+    </section>
+
+    <div class="content-section">
+        <form action="" method="POST">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Imput your answer </legend>
+               
+                <div class="form-group">
+                    {{ form.answer.label(class='form-control-label') }}
+                    {% if form.answer.errors %}
+                        {{ form.answer(class='form-control form-control-lg is-invalid') }}
+                        <div class="invalid-feedback">
+                            {% for error in form.answer.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.answer(class='form-control form-control-lg') }}
+                    {% endif %}
+                </div>
+            
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class='btn btn-outline-info') }}
+            </div>
+            
+        </form>
+    </div>
+
+
+
+
+    
+
+{% endblock %}
